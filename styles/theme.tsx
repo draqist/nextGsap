@@ -12,6 +12,20 @@ const config = {
   useSystemColorMode: false,
 }
 
+const fonts = {
+  heading: `"Bon Foyage Demo", sans-serif`,
+  body: `"DM Mono","Oswald",sans-serif`,
+}
 export const theme = extendTheme({
+  styles: {
+    global: {
+      body: {
+        bg: 'transparent',
+        // h: '100%'
+
+      },
+    },
+  },
   config,
+  fonts
 });

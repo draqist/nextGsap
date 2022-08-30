@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -14,6 +15,13 @@ a {
 * {
   box-sizing: border-box;
 }
+svg{
+  display: 'inline' !important;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -21,6 +29,6 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: transparent;
   }
 }
