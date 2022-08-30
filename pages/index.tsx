@@ -11,6 +11,7 @@ import {
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
+import { sentence, thourist, letter, moreThourist } from '../utils/deets';
 
 export default function Home() {
   useEffect(() => {
@@ -70,11 +71,11 @@ export default function Home() {
         maxH="100vh"
         px={['20px', '20px', '40px', '40px', '50px', '']}
         py={['20px', '20px', '40px', '40px', '45px', '10px']}
-        bg="red"
+        bg="#04374b"
         minW="100vw"
       >
         <Grid color="white" h="100%" templateColumns={'repeat(9, 1fr)'}>
-          <GridItem colSpan={4} textAlign="center" pos='relative'>
+          <GridItem colSpan={4} textAlign="center" pos="relative">
             <Heading
               fontSize="450px"
               fontFamily="JetBrains Mono"
@@ -82,43 +83,79 @@ export default function Home() {
             >
               0
             </Heading>
+          </GridItem>
+          <GridItem display="flex" justifyContent="center">
+            <Box w="1px" bg="white" h="100%"></Box>
+          </GridItem>
+          <GridItem
+            colSpan={4}
+            as={motion.div}
+            initial={{ opacity: 0.5 }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={{ once: true }}
+            pos="relative"
+          >
+            <Heading
+              as={motion.h3}
+              lineHeight="22px"
+              fontWeight="400"
+              letterSpacing="4"
+              variants={sentence}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              About Thourist
+              <Box mt="40px" textAlign="justify">
+                {thourist.split('').map((char, index) => {
+                  return (
+                    <Text
+                      fontFamily="DM Mono"
+                      fontSize="16px"
+                      as={motion.p}
+                      display="inline"
+                      key={char + '-' + index}
+                      variants={letter}
+                      color="white"
+                    >
+                      {char}
+                    </Text>
+                  );
+                })}
+              </Box>
+              <Box mt="30px" textAlign="justify">
+                {moreThourist.split('').map((char, index) => {
+                  return (
+                    <Text
+                      fontFamily="DM Mono"
+                      fontSize="16px"
+                      as={motion.p}
+                      display="inline"
+                      key={char + '-' + index}
+                      variants={letter}
+                      color="white"
+                    >
+                      {char}
+                    </Text>
+                  );
+                })}
+              </Box>
+            </Heading>
             <Flex
               alignItems="center"
               gap="4"
               pos="absolute"
               bottom="0px"
-              left="0px"
+              right="0px"
               color="red.100"
             >
               <Text fontSize="18px" textTransform="uppercase">
-                Scroll 
+                Scroll
               </Text>
               <Icon as={BsArrowRight} fontSize="20px" />
             </Flex>
-          </GridItem>
-          <GridItem display="flex" justifyContent="center">
-            <Box w="1px" bg="white" h="100%"></Box>
-          </GridItem>
-          <GridItem colSpan={4}>
-            <Text as={motion.p} initial={{ y: 150, opacity: 0 }} whileInView={{ y: '0', opacity:1, transition: { duration: 1.25, ease: 'easeInOut',}}} viewport={{ once: true }}>
-            adipisicing commodo Lorem eu ullamco anim dolor cillum fugiat sint
-            enim ipsum. Enim duis do cupidatat commodo laborum sunt Lorem non
-            proident magna qui consequat commodo ipsum. Tempor minim laborum
-            aliquip labore non proident aute. Velit magna adipisicing proident
-            pariatur velit voluptate incididunt. Qui velit mollit ad ipsum
-            proident labore nisi in ea quis labore et. Deserunt nisi voluptate
-            cupidatat aliqua excepteur. Cillum laboris dolore exercitation sit
-            minim ullamco ullamco sit aliquip ullamco. Ex veniam esse sint id
-            sint veniam exercitation tempor culpa eu velit sint. Excepteur ad
-            quis labore pariatur cillum non non commodo laborum adipisicing.
-            Minim reprehenderit et aute dolore consequat excepteur ad. Excepteur
-            incididunt occaecat excepteur ad et mollit excepteur. Do in anim
-            labore mollit aliquip adipisicing do ea mollit ipsum ea eu mollit.
-            Commodo proident ad consectetur incididunt veniam enim laborum.
-            Adipisicing dolore tempor dolore consectetur adipisicing minim.
-            Tempor consectetur ipsum incididunt esse velit ullamco tempor esse
-            labore quis proident.
-            </Text>
           </GridItem>
         </Grid>
       </Box>
