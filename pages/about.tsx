@@ -23,9 +23,9 @@ export default function about() {
           position="relative"
           top="0"
           left={['0','',"60px"]}
-          px={['10px', '20px', '30px', '60px', '100px', '']}
+          px={['20px', '20px', '30px', '60px', '100px', '']}
           pt={['50px', '20px', '40px', '80px', '100px', '10px']}
-          pr={['unset', '', '30px']}
+          pr={['20px', '', '30px']}
           w='calc(100% -120px)'
           justifyContent="space-between"
           gap="10"
