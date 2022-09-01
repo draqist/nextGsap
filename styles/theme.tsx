@@ -10,22 +10,21 @@ import { extendTheme } from '@chakra-ui/react';
 const config = {
   initialColorMode: 'light',
   useSystemColorMode: false,
-}
+};
 
 const fonts = {
   heading: `"Bon Foyage Demo", sans-serif`,
   body: `"DM Mono","Oswald",sans-serif`,
-}
+};
 export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: 'transparent',
+        bg: "#04374b",
         // h: '100%'
-
       },
     },
   },
   config,
-  fonts
+  fonts,
 });
