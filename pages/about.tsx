@@ -22,7 +22,7 @@ export default function about() {
         <Flex
           position="relative"
           top="0"
-          left="60px"
+          left={['0','',"60px"]}
           px={['10px', '20px', '30px', '60px', '100px', '']}
           pt={['50px', '20px', '40px', '80px', '100px', '10px']}
           pr={['unset', '', '30px']}
