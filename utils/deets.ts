@@ -45,8 +45,26 @@ const navanime = {
     transition: { duration: 1.25, ease: 'easeOut' },
   },
 };
+const navanime2 = {
+  initial: { opacity: 0, y: '-100vh' },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.25,
+      ease: 'anticipate',
+      staggerChildren: 1,
+      delayChildren: 0.25,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: '-100vh',
+    transition: { duration: 1.25, ease: 'easeOut' },
+  },
+};
 
-export { thourist, sentence, letter, letter2, moreThourist, navanime };
+export { thourist, sentence, letter, letter2, moreThourist, navanime, navanime2 };
 
 {
   /* <Flex pos='relative' className='skews' style={{filter:'url(#svg-distortion-filter)'}}>

@@ -12,6 +12,7 @@ import {
 import { AnimatePresence, motion } from 'framer-motion';
 import NextLink from 'next/link';
 import { BsArrowRight, BsArrowUp } from 'react-icons/bs';
+import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import {
   letter,
@@ -39,12 +40,12 @@ export default function Home() {
         animate={{ y: '-100vh', transition: { duration: 1, ease: 'easeOut' } }}
         exit={{y: '-100vh', transition: { duration: 2.5, delay: 1, ease: 'easeOut'}}}
       ></Box>
+      <Navbar/>
       <Flex
         wrap="nowrap"
         // h="100vh"
         w='100%'
         overflowY="hidden"
-        // overflowX='scroll'
         scrollSnapType={'x proximity'}
         scrollBehavior="smooth"
         as={motion.div}
@@ -62,7 +63,7 @@ export default function Home() {
           pt={['20px', '20px', '40px', '80px', '60px', '10px']}
           pr={['unset', '', 'unset']}
           minW="100vw"
-          maxH="100vh"
+          minH="100vh"
           overflow='hidden'
           bgImage="./pexels-alex-azabache-3185488.jpg"
           bgPosition="center"
@@ -73,7 +74,7 @@ export default function Home() {
             fontSize={['110px', '', '150px', '220px']}
             lineHeight={['100px', '', '140px', '170px']}
             color="red.200"
-            mt={[]}
+            mt={['60px']}
           >
             Thourist
           </Heading>
