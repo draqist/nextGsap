@@ -59,21 +59,21 @@ export default function Home() {
         <Box
           color="white"
           px={['10px', '20px', '80px', '100px', '100px', '']}
-          pt={['50px', '20px', '40px', '80px', '60px', '10px']}
+          pt={['20px', '20px', '40px', '80px', '60px', '10px']}
           pr={['unset', '', 'unset']}
           minW="100vw"
-          minH="100vh"
+          maxH="100vh"
+          overflow='hidden'
           bgImage="./pexels-alex-azabache-3185488.jpg"
           bgPosition="center"
           // pos='relative'
-          top='0'
-          right='0'
         >
           <Heading
             fontWeight="500"
             fontSize={['110px', '', '150px', '220px']}
             lineHeight={['100px', '', '140px', '170px']}
             color="red.200"
+            mt={[]}
           >
             Thourist
           </Heading>
