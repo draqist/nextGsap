@@ -17,6 +17,7 @@ export default function about() {
           transition: { duration: 0.5, ease: 'easeIn' },
         }}
         pos='absolute'
+        color='white'
       >
         <Sidebar />
         <Flex

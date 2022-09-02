@@ -7,7 +7,7 @@ import {
   Highlight,
   Icon,
   Link,
-  Text,
+  Text
 } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import NextLink from 'next/link';
@@ -18,7 +18,7 @@ import {
   letter2,
   moreThourist,
   sentence,
-  thourist,
+  thourist
 } from '../utils/deets';
 
 export default function Home() {
@@ -37,24 +37,24 @@ export default function Home() {
         as={motion.div}
         initial={{ y: 0 }}
         animate={{ y: '-100vh', transition: { duration: 1, ease: 'easeOut' } }}
-        viewport={{ amount: 1 }}
-        exit={{x: '-100vw', transition: { duration: 2.5, delay: 1, ease: 'easeOut'}}}
+        exit={{y: '-100vh', transition: { duration: 2.5, delay: 1, ease: 'easeOut'}}}
       ></Box>
       <Flex
         wrap="nowrap"
-        h="100vh"
+        // h="100vh"
+        w='100%'
         overflowY="hidden"
+        // overflowX='scroll'
         scrollSnapType={'x proximity'}
         scrollBehavior="smooth"
         as={motion.div}
-        initial={{ opacity: 0, skew: 8 }}
+        initial={{ opacity: 0, x: 20 }}
         animate={{
           opacity: 1,
-          scale: 1,
-          skew: 0,
+          originX:0,
+          x: 0,
           transition: { duration: 2.5, ease: 'anticipate' },
         }}
-        // pos='relative'
       >
         <Box
           color="white"
@@ -62,14 +62,16 @@ export default function Home() {
           pt={['50px', '20px', '40px', '80px', '60px', '10px']}
           pr={['unset', '', 'unset']}
           minW="100vw"
-          minH="100%"
+          minH="100vh"
           bgImage="./pexels-alex-azabache-3185488.jpg"
-          pos="relative"
           bgPosition="center"
+          // pos='relative'
+          top='0'
+          right='0'
         >
           <Heading
             fontWeight="500"
-            fontSize={['120px', '', '150px', '220px']}
+            fontSize={['110px', '', '150px', '220px']}
             lineHeight={['100px', '', '140px', '170px']}
             color="red.200"
           >
@@ -130,7 +132,7 @@ export default function Home() {
           </Box>
         </Box>
         <Box
-          maxH="100vh"
+          // maxH="100vh"
           px={['20px', '20px', '40px', '40px', '50px', '']}
           py={['20px', '20px', '40px', '40px', '45px', '10px']}
           bg="#04374b"
@@ -138,11 +140,13 @@ export default function Home() {
           zIndex="3"
           scrollSnapAlign={'center'}
           id="about"
+          display={['none', 'none', 'block']}
         >
           <Grid
             color="white"
             h="100%"
             templateColumns={['none', '', 'repeat(9, 1fr)']}
+            templateRows={['repeat(2, 1fr)', '', 'none']}
           >
             <GridItem
               colSpan={4}
@@ -171,6 +175,7 @@ export default function Home() {
               }}
               viewport={{ once: true }}
               pos="relative"
+              display={['none', 'none', 'none', 'none', 'block']}
             >
               <Heading
                 as={motion.h3}
@@ -227,6 +232,179 @@ export default function Home() {
                 color="red.100"
                 display={['none', 'none', 'flex']}
                 opacity="0.3"
+                _hover={{ opacity: 1, transition: 'all .25s' }}
+              >
+                <NextLink href="/sites" passHref>
+                  <Link href="">
+                    <Text fontSize="18px" textTransform="uppercase">
+                      Check it out
+                    </Text>
+                  </Link>
+                </NextLink>
+                <Icon as={BsArrowUp} fontSize="20px" />
+              </Flex>
+            </GridItem>
+            <GridItem
+              colSpan={4}
+              as={motion.div}
+              initial={{ opacity: 0.2 }}
+              whileInView={{
+                opacity: 1,
+              }}
+              viewport={{ once: true }}
+              pos="relative"
+              display={['none', 'none', 'block', 'block', 'none']}
+            >
+              <Heading
+                as={motion.h3}
+                lineHeight="22px"
+                fontWeight="400"
+                letterSpacing="4"
+                variants={sentence}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                About Thourist
+                <Box mt={['15px', '', '40px']} textAlign="justify">
+                  {thourist.split('').map((char, index) => {
+                    return (
+                      <Text
+                        fontFamily="DM Mono"
+                        fontSize="16px"
+                        as={motion.p}
+                        display="inline"
+                        key={char + '__' + index}
+                        variants={letter}
+                        color="white"
+                      >
+                        {char}
+                      </Text>
+                    );
+                  })}
+                </Box>
+                <Box mt={['15px', '', '30px']} textAlign="justify">
+                  {moreThourist.split('').map((char, index) => {
+                    return (
+                      <Text
+                        fontFamily="DM Mono"
+                        fontSize="16px"
+                        as={motion.p}
+                        display="inline"
+                        key={char + '$' + index}
+                        variants={letter2}
+                        color="white"
+                      >
+                        {char}
+                      </Text>
+                    );
+                  })}
+                </Box>
+              </Heading>
+              <Flex
+                alignItems="center"
+                gap="4"
+                pos="absolute"
+                bottom="0px"
+                right="0px"
+                color="red.100"
+                display={['none', 'none', 'flex']}
+                opacity="0.3"
+                _hover={{ opacity: 1, transition: 'all .25s' }}
+              >
+                <NextLink href="/sites" passHref>
+                  <Link href="">
+                    <Text fontSize="18px" textTransform="uppercase">
+                      Check it out
+                    </Text>
+                  </Link>
+                </NextLink>
+                <Icon as={BsArrowUp} fontSize="20px" />
+              </Flex>
+            </GridItem>
+          </Grid>
+        </Box>
+        <Box
+          maxH="100vh"
+          px={['20px', '20px', '40px', '40px', '50px', '']}
+          py={['20px', '20px', '40px', '40px', '45px', '10px']}
+          bg="#04374b"
+          minW="100vw"
+          zIndex="3"
+          scrollSnapAlign={'center'}
+          id="about"
+          display={['block', 'block', 'none']}
+        >
+          <Grid
+            color="white"
+            h="100%"
+            templateColumns={['none', '', 'repeat(9, 1fr)']}
+            templateRows={['repeat(8, 1fr)', '', 'none']}
+          >
+            <GridItem
+              colSpan={4}
+              rowSpan={1}
+              textAlign="center"
+              pos="relative"
+              borderBottom={['1px solid #ffffff45', '', 'none']}
+              mb={['30px', '', '0']}
+            >
+              <Heading
+                fontSize={['170px', '', '450px']}
+                fontFamily="JetBrains Mono"
+                fontWeight="200"
+              >
+                0
+              </Heading>
+            </GridItem>
+            <GridItem display={['none', '', 'flex']} justifyContent="center">
+              <Box w="1px" bg="white" h="100%"></Box>
+            </GridItem>
+            <GridItem
+              colSpan={4}
+              rowSpan={7}
+              as={motion.div}
+              pos="relative"
+              display={['block', 'block', '']}
+            >
+              <Heading
+                as={motion.h3}
+                lineHeight="22px"
+                fontWeight="400"
+                letterSpacing="4"
+                variants={sentence}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                About Thourist
+                <Box mt={['30px', '', '40px']} textAlign="center">
+                  {thourist.split('').map((char, index) => {
+                    return (
+                      <Text
+                        fontFamily="DM Mono"
+                        fontSize="16px"
+                        as={motion.p}
+                        display="inline"
+                        key={char + '__' + index}
+                        variants={letter}
+                        color="white"
+                      >
+                        {char}
+                      </Text>
+                    );
+                  })}
+                </Box>
+              </Heading>
+              <Flex
+                alignItems="center"
+                gap="4"
+                pos="absolute"
+                bottom="0px"
+                right="0px"
+                color="red.100"
+                display={['flex', 'none', 'flex']}
+                opacity="1"
                 _hover={{ opacity: 1, transition: 'all .25s' }}
               >
                 <NextLink href="/sites" passHref>

@@ -20,8 +20,9 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: "#04374b",
-        // h: '100%'
+        // bg: "#04374b",
+        minHeight: '100vh',
+        h: '100%'
       },
     },
   },
