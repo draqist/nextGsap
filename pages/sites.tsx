@@ -1,5 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
+import Navbar from '../components/Navbar';
 
 export default function sites() {
   return (
@@ -9,7 +10,7 @@ export default function sites() {
         initial={{ opacity: 0, y: '-100vh' }}
         animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}
       >
-        sites
+        <Navbar/>
       </Box>
     </AnimatePresence>
   );

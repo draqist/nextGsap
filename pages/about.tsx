@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
+import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 
 export default function about() {
@@ -8,6 +9,7 @@ export default function about() {
       <Box
         w="100vw"
         // maxH={['100vh', '', '100vh']}
+        h='100vh'
         bg="#04374b"
         as={motion.div}
         initial={{ opacity: 0, x: -14 }}
@@ -19,10 +21,11 @@ export default function about() {
         pos='absolute'
         color='white'
       >
+        <Navbar/>
         <Sidebar />
         <Flex
           position="relative"
-          top="0"
+          top={['60px',"0"]}
           left={['0','',"60px"]}
           px={['20px', '20px', '30px', '60px', '100px', '']}
           pt={['50px', '20px', '40px', '80px', '100px', '10px']}

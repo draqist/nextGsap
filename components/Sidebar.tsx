@@ -22,7 +22,7 @@ const Sidebar = (props: any) => {
       display={['none', '', 'block']}
       as={motion.div}
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { delay: 1.05 } }}
+      animate={{ opacity: 1, transition: { delay: 1.25 } }}
     >
       <Box
         pt="44px"
@@ -177,16 +177,16 @@ const Sidebar = (props: any) => {
             top={['', '', '400px', '440px', '290px']}
           >
             <Box fontSize="12px" textTransform="uppercase">
-              <Text> Designed</Text>
+              <Text color="white"> Designed</Text>
             </Box>
             <Box fontSize="12px" textTransform="uppercase">
-              <Text> and</Text>
+              <Text color="white"> and</Text>
             </Box>
             <Box fontSize="12px" textTransform="uppercase">
-              <Text> developed</Text>
+              <Text color="white"> developed</Text>
             </Box>
             <Box fontSize="12px" textTransform="uppercase">
-              <Text> by</Text>
+              <Text color="white"> by</Text>
             </Box>
             <Box fontSize="12px" textTransform="uppercase">
               <Text color="red.300"> Draq</Text>

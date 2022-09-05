@@ -1,9 +1,9 @@
 import { Box, Circle, Flex, Heading, Link, Text, VStack } from '@chakra-ui/react';
 import { AnimatePresence, motion } from 'framer-motion';
+import NextLink from 'next/link';
 import { useState } from 'react';
-import NextLink from 'next/link'
-import { navanime2 } from '../utils/deets';
 import { IoMdClose } from 'react-icons/io';
+import { navanime2 } from '../utils/deets';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false)
@@ -14,15 +14,19 @@ const Navbar = () => {
       w="100%"
       h="60px"
       alignItems="center"
-      // gap="20px"
       zIndex="5"
       borderBottom="1px solid #ffffff45"
-      bg="#04374b40"
       px="20px"
       justifyContent="space-between"
+      as={motion.div}
+      initial={{ opacity: 0 ,y: '-20'}}
+      animate={{ opacity: 1, y:0, transition: { delay: 2 , duration: .5, } }}
     >
       <Box>
-        <Heading fontWeight="300"> Thourist </Heading>
+        <Heading color="white" fontWeight="300">
+          {' '}
+          Thourist{' '}
+        </Heading>
       </Box>
       <Box>
         <VStack
@@ -36,14 +40,14 @@ const Navbar = () => {
           <Box h="1px" bg="#ffffff" w="40px"></Box>
           <Box h="1px" bg="#ffffff" w="75%"></Box>
           <Box h="1px" bg="#ffffff" w="45%"></Box>
-        </VStack>  
+        </VStack>
       </Box>
       <AnimatePresence>
         {nav ? (
           <Box
             pos="absolute"
             top="0px"
-            left='0'
+            left="0"
             as={motion.div}
             variants={navanime2}
             initial="initial"
@@ -58,7 +62,7 @@ const Navbar = () => {
             display="flex"
             alignItems="center"
             // justifyContent="space-between"
-            gap='10'
+            gap="10"
             // pt="20px"
             flexDirection="column-reverse"
           >
